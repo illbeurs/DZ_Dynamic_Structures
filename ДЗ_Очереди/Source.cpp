@@ -25,7 +25,7 @@ void main()
 			f.getline(buf, sz);
 			if (strcmp(buf, "<!--#TITLE#-->") == 0)
 			{
-				cout << "<h1 class='title'>Очередь</h1>";
+				cout << "<h1 class='title'>РћС‡РµСЂРµРґСЊ</h1>";
 			}
 			if (strcmp(buf, "<!--#CONTENT#-->") == 0)
 			{
@@ -38,7 +38,7 @@ void main()
 	}
 	else
 	{
-		cout << "Ошибка Загрузки Файла";
+		cout << "РћС€РёР±РєР° Р—Р°РіСЂСѓР·РєРё Р¤Р°Р№Р»Р°";
 	}
 }
 
@@ -66,13 +66,13 @@ void show_content() {
 		text.close();
 	}
 	else {
-		cout << "Вкладчики:\n";
+		cout << "Р’РєР»Р°РґС‡РёРєРё:\n";
 		show_queue(deposit);
-		cout << "Кредиторы:\n";
+		cout << "РљСЂРµРґРёС‚РѕСЂС‹:\n";
 		show_queue(credit);
 	}
 	cout << "</textarea>";
-	cout << "<input type='submit' value='Распределить по кредитам и вкладам' class='button'>";
+	cout << "<input type='submit' value='Р Р°СЃРїСЂРµРґРµР»РёС‚СЊ РїРѕ РєСЂРµРґРёС‚Р°Рј Рё РІРєР»Р°РґР°Рј' class='button'>";
 	cout << "</form>";
 
 	delete[] data;
@@ -94,13 +94,13 @@ void load_data(const char* filename, queue& dep, queue& cred)
 			int payment;
 			char* goal = new char[50];
 			sscanf_s(man, "%s %s %d %s %d %s", lastname, 50, sex, 50, &age, job, 50, &payment, goal, 50);
-			if (string(goal) == "Кредит") enqueue(cred, lastname, sex, age, job, payment, goal);
+			if (string(goal) == "РљСЂРµРґРёС‚") enqueue(cred, lastname, sex, age, job, payment, goal);
 			else enqueue(dep, lastname, sex, age, job, payment, goal);
 		}
 		f.close();
 	}
 	else
-		cout << "Файл не открылся";
+		cout << "Р¤Р°Р№Р» РЅРµ РѕС‚РєСЂС‹Р»СЃСЏ";
 }
 
 void show_queue(queue& q)
