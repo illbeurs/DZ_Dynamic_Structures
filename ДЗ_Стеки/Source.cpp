@@ -4,35 +4,35 @@
 using namespace std;
 void show_content();
 void resh(char* s) {
-    char opn[4] = { '(', '[', '{', '<' }; // открывающие скобки
-    char cls[4] = { ')', ']', '}', '>' }; // закрывающие скобки
-    char open; //open - временный char для сравнения открывающих скобок
+    char opn[4] = { '(', '[', '{', '<' }; // РѕС‚РєСЂС‹РІР°СЋС‰РёРµ СЃРєРѕР±РєРё
+    char cls[4] = { ')', ']', '}', '>' }; // Р·Р°РєСЂС‹РІР°СЋС‰РёРµ СЃРєРѕР±РєРё
+    char open; //open - РІСЂРµРјРµРЅРЅС‹Р№ char РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ РѕС‚РєСЂС‹РІР°СЋС‰РёС… СЃРєРѕР±РѕРє
     int i, k, order;
-    elem* stack{ 0 }; // стек символов
+    elem* stack{ 0 };  // СЃС‚РµРє СЃРёРјРІРѕР»РѕРІ
     bool flag = 1;
     for (i = 0; s[i] != '\0'; i++) {
-        for (k = 0; k < 4; k++) // проверить 3 вида скобок
+        for (k = 0; k < 4; k++) // РїСЂРѕРІРµСЂРёС‚СЊ 4 РІРёРґР° СЃРєРѕР±РѕРє
         {
-            if (s[i] == opn[k]) { // открывающая скобка
+            if (s[i] == opn[k]) { // РѕС‚РєСЂС‹РІР°СЋС‰Р°СЏ СЃРєРѕР±РєР°
                 push(stack, s[i], i);
                 break;
             }
-            if (s[i] == cls[k] && stack) { // закрывающая скобка
-                pop(stack, open, order); // вынимаем последнюю записанную в стек открывающую скобку для сравнения
+            if (s[i] == cls[k] && stack) { // Р·Р°РєСЂС‹РІР°СЋС‰Р°СЏ СЃРєРѕР±РєР°
+                pop(stack, open, order); // РІС‹РЅРёРјР°РµРј РїРѕСЃР»РµРґРЅСЋСЋ Р·Р°РїРёСЃР°РЅРЅСѓСЋ РІ СЃС‚РµРє РѕС‚РєСЂС‹РІР°СЋС‰СѓСЋ СЃРєРѕР±РєСѓ РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ
                 if (open != opn[k]) {
                     cout << i << " ";
                     flag = 0;
                 }
                 break;
             }
-            if (!stack && k == 3) { //если все открывающие закрылись, но в строке остались лишние скобки
+            if (!stack && k == 3) { //РµСЃР»Рё РІСЃРµ РѕС‚РєСЂС‹РІР°СЋС‰РёРµ Р·Р°РєСЂС‹Р»РёСЃСЊ, РЅРѕ РІ СЃС‚СЂРѕРєРµ РѕСЃС‚Р°Р»РёСЃСЊ Р»РёС€РЅРёРµ СЃРєРѕР±РєРё
                 cout << i << " ";
                 flag = 0;
                 break;
             }
         }
     }
-    if (stack) { //если остались лишние открывающие скобки 
+    if (stack) { //РµСЃР»Рё РѕСЃС‚Р°Р»РёСЃСЊ Р»РёС€РЅРёРµ РѕС‚РєСЂС‹РІР°СЋС‰РёРµ СЃРєРѕР±РєРё 
         while (stack) {
             pop(stack, open, order);
             cout << order << " ";
@@ -40,10 +40,10 @@ void resh(char* s) {
         flag = 0;
     }
     if (flag) {
-        cout <<"Введенное выражение верно";
+        cout <<"Р’РІРµРґРµРЅРЅРѕРµ РІС‹СЂР°Р¶РµРЅРёРµ РІРµСЂРЅРѕ";
     }
     else {
-        cout << "- Индексы ошибок";
+        cout << "- РРЅРґРµРєСЃС‹ РѕС€РёР±РѕРє";
     }
 }
 void main() {
@@ -60,7 +60,7 @@ void main() {
             if (strcmp(buf, "<!--#TITLE#-->") == 0)
             {    
                 cout << "<div class = 'wrap'>";
-                cout << "<h1 class = 'title'>Стеки</h1>";  
+                cout << "<h1 class = 'title'>РЎС‚РµРєРё</h1>";  
             }
             if (strcmp(buf, "<!--#CONTENT#-->") == 0)
             {
@@ -73,16 +73,16 @@ void main() {
     }
     else
     {
-        cout << "Сайт не удалось открыть :(";
+        cout << "РЎР°Р№С‚ РЅРµ РѕС‚РєСЂС‹Р»СЃСЏ";
     }
 }
 void show_content()
 {
     cout << "<form method='get' action='stack.cgi'>";
-    cout << "<input type='text' class='enter' name='skobki' placeholder='Введите скобочную последовательность'>";
-    cout << "<input type='submit' value='Отправить' class='button'></input>";
+    cout << "<input type='text' class='enter' name='skobki' placeholder='Р’РІРµРґРёС‚Рµ СЃРєРѕР±РѕС‡РЅСѓСЋ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ'>";
+    cout << "<input type='submit' value='РћС‚РїСЂР°РІРёС‚СЊ' class='button'></input>";
     cout << "</form>";
-    cout << "<h2 class = 'result'>Результат</h2>";
+    cout << "<h2 class = 'result'>Р РµР·СѓР»СЊС‚Р°С‚</h2>";
     cout << "<div class = 'output'>";
     char* data = nullptr;
     get_form_data(data);
@@ -90,7 +90,7 @@ void show_content()
     {
         char* value = nullptr;
         get_param_value(value, "skobki", data);
-        cout << "Введенное выражение : " << value<<"<br>";
+        cout << "Р’РІРµРґРµРЅРЅРѕРµ РІС‹СЂР°Р¶РµРЅРёРµ : " << value<<"<br>";
         resh(value);
   
     }
