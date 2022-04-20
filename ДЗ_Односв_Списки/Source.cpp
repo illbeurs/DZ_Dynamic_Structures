@@ -55,7 +55,7 @@ void show_content()
     elem* list = new elem;
     cout << "<form method='get' action='list.cgi'>";
     cout << "<input type='text' class='enter' name='list' placeholder='Введите значение для занесения в список, либо значение и место в списке, в которое его нужно вставить (через пробел)'>";
-    cout << "<input type='submit' value='Îòïðàâèòü' class='button'></input>";
+    cout << "<input type='submit' value='Отправить' class='button'></input>";
     cout << "</form>";
     cout << "<h2 class = 'result'>Список с уникальными значениями: </h2>";
     cout << "<div class = 'output'>";
