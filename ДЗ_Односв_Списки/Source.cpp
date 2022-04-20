@@ -54,10 +54,10 @@ void show_content()
 {
     elem* list = new elem;
     cout << "<form method='get' action='list.cgi'>";
-    cout << "<input type='text' class='enter' name='list' placeholder='Введите значение для занесения в список, либо значение и место в списке, в которое его нужно вставить (через пробел)'>";
-    cout << "<input type='submit' value='Отправить' class='button'></input>";
+    cout << "<input type='text' class='enter' name='list' placeholder='Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ Р·Р°РЅРµСЃРµРЅРёСЏ РІ СЃРїРёСЃРѕРє, Р»РёР±Рѕ Р·РЅР°С‡РµРЅРёРµ Рё РјРµСЃС‚Рѕ РІ СЃРїРёСЃРєРµ, РІ РєРѕС‚РѕСЂРѕРµ РµРіРѕ РЅСѓР¶РЅРѕ РІСЃС‚Р°РІРёС‚СЊ (С‡РµСЂРµР· РїСЂРѕР±РµР»)'>";
+    cout << "<input type='submit' value='ГЋГІГЇГ°Г ГўГЁГІГј' class='button'></input>";
     cout << "</form>";
-    cout << "<h2 class = 'result'>Список с уникальными значениями: </h2>";
+    cout << "<h2 class = 'result'>РЎРїРёСЃРѕРє СЃ СѓРЅРёРєР°Р»СЊРЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё: </h2>";
     cout << "<div class = 'output'>";
     char* data = nullptr;
     get_form_data(data);
@@ -114,7 +114,7 @@ void show_content()
         }
     }
     else {
-        cout << "Список пока что пуст";
+        cout << "РЎРїРёСЃРѕРє РїРѕРєР° С‡С‚Рѕ РїСѓСЃС‚";
     }
     delete[] data;  
     }
@@ -135,7 +135,7 @@ void main()
             f.getline(buf, sz);
             if (strcmp(buf, "<!--#TITLE#-->") == 0)
             {
-                cout << "<h1 class='title'>Список</h1>";
+                cout << "<h1 class='title'>РЎРїРёСЃРѕРє</h1>";
             }
             if (strcmp(buf, "<!--#CONTENT#-->") == 0)
             {
@@ -148,6 +148,6 @@ void main()
     }
     else
     {
-        cout << "CGI-файл не загрузился";
+        cout << "CGI-С„Р°Р№Р» РЅРµ Р·Р°РіСЂСѓР·РёР»СЃСЏ";
     }
 }
